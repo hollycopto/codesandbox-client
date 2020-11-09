@@ -21,5 +21,5 @@ export default () => {
     return process.env.ROOT_URL;
   }
 
-  return 'https://csb-bogdan.dev';
+  return 'https://codesandbox.io';
 };

@@ -66,7 +66,7 @@ type State = {
 
 const sseDomain = process.env.STAGING_API
   ? 'codesandbox.stream'
-  : 'csb-bogdan.dev';
+  : 'codesandbox.io';
 
 const getSSEUrl = (sandbox?: Sandbox, initialPath: string = '') =>
   `https://${sandbox ? `${sandbox.id}.` : ''}sse.${
@@ -207,7 +207,7 @@ class BasePreview extends React.Component<Props, State> {
 
     // url may be a relative path (/test), so start with that
     const initialPath = url || this.props.initialPath || '';
-
+    console.error(getSSEUrl(sandbox, initialPath));
     return this.serverPreview
       ? getSSEUrl(sandbox, initialPath)
       : frameUrl(sandbox, initialPath, {

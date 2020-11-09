@@ -229,7 +229,7 @@ module.exports = merge(commonConfig, {
       },
       minify: true,
       // For unknown URLs, fallback to the index page
-      navigateFallback: `${process.env.CODESANDBOX_HOST}/frame.html`,
+      navigateFallback: 'https://new.codesandbox.io/frame.html',
       staticFileGlobs: process.env.SANDBOX_ONLY
         ? ['www/index.html']
         : ['www/frame.html'],
@@ -264,7 +264,7 @@ module.exports = merge(commonConfig, {
         {
           // These should be dynamic, since it's not loaded from this domain
           // But from the root domain
-          urlPattern: /csb-bogdan\.dev\/static\/js\//,
+          urlPattern: /codesandbox\.io\/static\/js\//,
           handler: 'fastest',
           options: {
             cache: {
@@ -286,7 +286,7 @@ module.exports = merge(commonConfig, {
           },
         },
         {
-          urlPattern: /prod-packager-packages\.csb-bogdan\.dev/,
+          urlPattern: /prod-packager-packages\.codesandbox\.io/,
           handler: 'fastest',
           options: {
             cache: {
